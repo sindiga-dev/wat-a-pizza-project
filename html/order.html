@@ -1,13 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza Order App</title>
-    <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/order.css">
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=gLNM9GEO3RPYEM_WDv2x6cmt6EdP3tL5zBvepLvsB38f8XJpo5neZboDsSQzxlRV-VgFEp9aUx6KSqBEoIxhcMq0bPo1TJFztn3ktX2JPbw" charset="UTF-8"></script></head>
+    <link rel="stylesheet" href="/css/nav.css">
+    <title>Pizza Order Form</title>
+</head>
 <body>
     <div class="topnav">
         <a href="index.html">Home</a>
@@ -15,46 +14,49 @@
         <a href="customer.html">Customer Registration</a>
         <a href="order.html">Place an Order</a>
     </div>
-
-    <!-- Paste the code developed in sprint 5 challenge to create order form here  -->
-    <main class="container main">
-        <div id ="div">
-            <form action="POST" id="form1" class="form" >
-                <label style="font-size:30px;" class="form-label"for="Fill Up Order Details Here">Fill Up Order Details Here</label>
-                <br>
-                <label class="form-label" style="font-weight:bold;" for="OrderId"> Order Id:</label>
-                <br>
-                <input id="input" id="input1" class="form-text" type="text" required>
-                <br>
-                <label class="form-label" style="font-weight:bold;"for="Customer Name">Customer Name:</label>
-                <br>
-                <input id="input" id="input2" type="text" required>
-                <br>
-                <label class="form-label" style="font-weight:bold;"for="email">Email Id:</label>
-                <br>
-                <input id="input" id="input3" type="email" required>
-                <br>
-                <label class="form-label"style="font-weight:bold;"for="Contact Number">Contact Number:</label>
-                <br>
-                <input id="input" id="input4" type="tel" required maxlength="10">
-                <br>
-                <label class="form-label"style="font-weight:bold;" for="Order Date">Order Date:</label>
-                <br>
-                <input id="input" id="input5" type="date" pattern="dd-mm-yyyy">
-                <br>
-                <label class="form-label"style="font-weight:bold;" for="Address">Address:</label>
-                <br>
-                <textarea name="address" id="input6" cols="30" rows="3" required minlength="10"></textarea>
-                <br>
-        
-                <label class="form-label"style="font-weight:bold;" for="Add order">Add Order:</label> 
-                <button style="border-radius: 50%;"id = "orderbutton" onclick=" orderCategory(event)">&#x2b;</button>
-                <br>
-                
-                <input type="submit" value="Order Now" style="background-color:rgb(6, 6, 156); color: aqua;">
-            </form>
-    
-        </div>
-        </main>
+    <div class="form">
+        <h2>Fill up Order Details here</h2>
+        <form class="content" action="#"  name="orderform" onsubmit="return info()">
+            <label>Order Id:</label>
+            <br>
+            <input id="orderid" type="text" name="order">
+            <span id="iderror" class="error"></span>
+            <br>
+            <label>Customer Name:</label>
+            <br>
+            <input id="customername" type="text" name="name">
+            <span id="nameerror" class="error"></span>
+            <br>
+            <label>Email Id:</label>
+            <br>
+            <input id="email" type="email" name="email">
+            <span id="emailerror" class="error"></span>
+            <br>
+            <label>Contact Number:</label>
+            <br>
+            <input id="number" type="text" name="phonenumber">
+            <br>
+            <label>Order Date:</label>
+            <br>
+            <input type="date" name="date" id="date">
+            <br>
+            <label>Address:</label>
+            <br>
+            <input id="address" type="text" name="address">
+            <span id="addresserror" class="error"></span>
+            <br>
+            <label>Add Order:</label>
+            <button id="dynamicbutton" onclick="return create()">+</button>
+            <br>
+            <div id="dynamic">
+            </div>
+            <br>
+            <label>Total Amount:</label>
+            <input id="total" type="text" value="0" name="total">
+            <br>
+            <button type="submit" id="submit">Order Now</button> 
+        </form>
+    </div>
+    <script src="/js/order.js"></script>
 </body>
 </html>
