@@ -1,4 +1,61 @@
 let information = [];;
+// Selectors
+const customerName = document.querySelector('#customer-name');
+const customerEmail = document.querySelector('#customer-email');
+const customerPhone = document.querySelector('#customer-phone');
+const pizzaSize = document.querySelector('#pizza-size');
+const pizzaType = document.querySelector('#pizza-type');
+const pizzaToppings = document.querySelectorAll('input[name="toppings"]:checked');
+const saveOrderBtn = document.querySelector('#save-order-btn');
+
+// Event Listeners
+saveOrderBtn.addEventListener('click', saveOrder);
+
+// Function to capture and persist order details
+function saveOrder() {
+  // Validate customer details
+  if (customerName.value === '' || customerEmail.value === '' || customerPhone.value === '') {
+    alert('Please provide all the customer details');
+    return;
+  }
+
+  // Validate pizza details
+  if (pizzaSize.value === '' || pizzaType.value === '' || pizzaToppings.length === 0) {
+    alert('Please select pizza size, type and toppings');
+    return;
+  }
+
+  // Prepare order object
+  const order = {
+    customerName: customerName.value,
+    customerEmail: customerEmail.value,
+    customerPhone: customerPhone.value,
+    pizzaSize: pizzaSize.value,
+    pizzaType: pizzaType.value,
+    pizzaToppings: Array.from(pizzaToppings).map(topping => topping.value)
+  };
+
+  // Persist order details using Axios API call
+  axios.post('http://localhost:3000/orders', order)
+    .then(response => {
+      // Display order details on web page
+      const orderDetails = document.querySelector('#order-details');
+      orderDetails.innerHTML = `
+        <p>Thank you for your order, ${response.data.customerName}!</p>
+        <p>Your order details:</p>
+        <ul>
+          <li>Pizza Size: ${response.data.pizzaSize}</li>
+          <li>Pizza Type: ${response.data.pizzaType}</li>
+          <li>Toppings: ${response.data.pizzaToppings.join(', ')}</li>
+          <li>Customer Name: ${response.data.customerName}</li>
+          <li>Customer Email: ${response.data.customerEmail}</li>
+          <li>Customer Phone: ${response.data.customerPhone}</li>
+        </ul>
+      `;
+    })
+    .catch(error => console.error(error));
+}
+
 function create(){
     const dynamicSection = document.getElementById('dynamic');
     let lineBreak = document.createElement('br');
