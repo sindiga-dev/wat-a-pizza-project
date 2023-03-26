@@ -1,4 +1,9 @@
-function submitCustomerDetail(event) {
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+  
+  function submitCustomerDetail(event) {
     event.preventDefault();
   
     // Get form values
@@ -48,7 +53,7 @@ function submitCustomerDetail(event) {
   
     // Save customer details to json-server using Axios API
     axios
-      .post("http://localhost:3000/customers", {
+      .post("http://localhost:3000/customer", {
         custID,
         name,
         password,
@@ -64,3 +69,4 @@ function submitCustomerDetail(event) {
         alert("Error occurred while registering customer");
       });
   }
+  

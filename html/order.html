@@ -17,5 +17,44 @@
     </div>
 
     <!-- Paste the code developed in sprint 5 challenge to create order form here  -->
+    <main class="container main">
+        <div id ="div">
+            <form action="#" id="form1" class="form" >
+                <label style="font-size:30px;" class="form-label"for="Fill Up Order Details Here">Fill Up Order Details Here</label>
+                <br>
+                <label class="form-label" style="font-weight:bold;" for="OrderId"> Order Id:</label>
+                <br>
+                <input id="input" id="input1" class="form-text" type="text" required>
+                <br>
+                <label class="form-label" style="font-weight:bold;"for="Customer Name">Customer Name:</label>
+                <br>
+                <input id="input" id="input2" type="text" required>
+                <br>
+                <label class="form-label" style="font-weight:bold;"for="email">Email Id:</label>
+                <br>
+                <input id="input" id="input3" type="email" required>
+                <br>
+                <label class="form-label"style="font-weight:bold;"for="Contact Number">Contact Number:</label>
+                <br>
+                <input id="input" id="input4" type="tel" required maxlength="10">
+                <br>
+                <label class="form-label"style="font-weight:bold;" for="Order Date">Order Date:</label>
+                <br>
+                <input id="input" id="input5" type="date" pattern="dd-mm-yyyy">
+                <br>
+                <label class="form-label"style="font-weight:bold;" for="Address">Address:</label>
+                <br>
+                <textarea name="address" id="input6" cols="30" rows="3" required minlength="10"></textarea>
+                <br>
+        
+                <label class="form-label"style="font-weight:bold;" for="Add order">Add Order:</label> 
+                <button style="border-radius: 50%;"id = "orderbutton" onclick=" orderCategory(event)">&#x2b;</button>
+                <br>
+                
+                <input type="submit" value="Order Now" style="background-color:rgb(6, 6, 156); color: aqua;">
+            </form>
+    
+        </div>
+        </main>
 </body>
 </html>
