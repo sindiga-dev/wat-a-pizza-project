@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Registration Form </title>
-    <link rel="stylesheet" href="./css/customer.css">
+    <link rel="stylesheet" href="/css/customer.css">
     <link rel="stylesheet" href="/css/nav.css">
 <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Vvd74DslEpcIJhTZvt2a2WO_PRKD51gtl8Ujb37AiRQ9RfuW6x8c-OlZvaVcVa7Bz9GtRJ7ZRU6G7iYqyu4FC3f2E7SU6uOxL9KApHzV-MI" charset="UTF-8"></script></head>
 <body>
@@ -22,7 +22,7 @@
         </div>
         <div>
             <label for="name">Customer Name:</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" required>
         </div>
         <div>
             <label for="custPasword">Password:</label>
@@ -34,15 +34,15 @@
         </div>
         <div>
             <label for="email">Email Id:</label>
-            <input type="text" name="email" id="email">
+            <input type="email" name="email" id="email" required>
         </div>
         <div>
             <label for="contact">Contact Number:</label>
-            <input type="text" name="contact" id="contact">
+            <input type="text" name="contact" id="contact" required>
         </div>
         <div>
             <label for="address">Address:</label>
-            <textarea id="address" name="address" rows="4" cols="30"></textarea>
+            <textarea id="address" name="address" rows="4" cols="30" required></textarea>
         </div>
         <div>
             <input type="submit" value="Register" />
