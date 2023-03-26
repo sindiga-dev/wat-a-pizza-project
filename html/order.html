@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/css/nav.css">
     <title>Pizza Order Form</title>
 </head>
+
 <body>
     <div class="topnav">
         <a href="index.html">Home</a>
@@ -15,34 +17,34 @@
         <a href="order.html">Place an Order</a>
     </div>
     <div class="form">
-        <h2>Fill up Order Details here</h2>
-        <form class="content" action="#"  name="orderform" onsubmit="return info()">
+        <h4>Fill up Order Details here</h4>
+        <form class="content" action="#" name="orderform" onsubmit="return info()">
             <label>Order Id:</label>
             <br>
-            <input id="orderid" type="text" name="order">
+            <input id="orderid" type="text" name="order" required>
             <span id="iderror" class="error"></span>
             <br>
             <label>Customer Name:</label>
             <br>
-            <input id="customername" type="text" name="name">
+            <input id="customername" type="text" name="name" required>
             <span id="nameerror" class="error"></span>
             <br>
             <label>Email Id:</label>
             <br>
-            <input id="email" type="email" name="email">
+            <input id="email" type="email" name="email" required>
             <span id="emailerror" class="error"></span>
             <br>
             <label>Contact Number:</label>
             <br>
-            <input id="number" type="text" name="phonenumber">
+            <input id="number" type="text" name="phonenumber" required>
             <br>
             <label>Order Date:</label>
             <br>
-            <input type="date" name="date" id="date">
+            <input type="date" name="date" id="date" required>
             <br>
             <label>Address:</label>
             <br>
-            <input id="address" type="text" name="address">
+            <input id="address" type="text" name="address" required>
             <span id="addresserror" class="error"></span>
             <br>
             <label>Add Order:</label>
@@ -50,13 +52,23 @@
             <br>
             <div id="dynamic">
             </div>
+            <table class="order-table" style="width:100%">
+                <tr>
+                    <th>Category Name</th>
+                    <th>Item Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                </tr>
+            </table>
             <br>
             <label>Total Amount:</label>
-            <input id="total" type="text" value="0" name="total">
+            <input id="total" type="text" value="0" name="total" required>
             <br>
-            <button type="submit" id="submit">Order Now</button> 
+            <button type="submit" id="submit">Order Now</button>
         </form>
     </div>
     <script src="/js/order.js"></script>
 </body>
+
 </html>
