@@ -16,7 +16,21 @@
     </div>
     
     <!-- Write drop down list code here  -->
-    <select name="category" id="category"></select>
+    <div class="menu-container">
+        <div class="menu-header">
+          <h2>Our Menu</h2>
+          <select id="menu-categories">
+            <option value="all">All</option>
+            <option value="starters">Starters</option>
+            <option value="mains">Mains</option>
+            <option value="desserts">Desserts</option>
+          </select>
+        </div>
+        <div class="menu-items">
+          <!-- menu items will be dynamically generated here -->
+        </div>
+      </div>
+      
 
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
