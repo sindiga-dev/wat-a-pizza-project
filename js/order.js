@@ -1,4 +1,4 @@
-let information = [];;
+let information = [];
 // Selectors
 const customerName = document.querySelector('#customer-name');
 const customerEmail = document.querySelector('#customer-email');
@@ -36,7 +36,7 @@ function saveOrder() {
   };
 
   // Persist order details using Axios API call
-  axios.post('http://localhost:3000/orders', order)
+  axios.post('http://localhost:3001/orders', order)
     .then(response => {
       // Display order details on web page
       const orderDetails = document.querySelector('#order-details');

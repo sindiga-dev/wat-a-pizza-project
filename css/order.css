@@ -14,7 +14,7 @@
 }
 
 .form{
-    width: 950px;
+    width: 650px;
     border: 1px solid gray;
     margin-left: auto;
     margin-right: auto;
@@ -22,6 +22,7 @@
     height: auto;
     padding: 20px;
     border-radius: 10px;
+    /* box-shadow: -4px -3px 45px 21px rgba(0,0,0,0.35); */
 }
 
 input{
@@ -34,14 +35,17 @@ input{
 }
 label{
     font-size: 14px;
+    font-weight: 600;
 }
 
 input[type="button"]{
     display: inline;
 }
 
-h2{
+h4{
     margin-bottom: 30px;
+    font-weight: 400;
+    padding-bottom: 20px;
 }
 
 #total{
@@ -80,4 +84,10 @@ button{
 .error{
     color: red;
     font-size: 13px;
+}
+
+table.order-table{
+    border-collapse: collapse;
+    padding-top: 10px;
+    font-size: small;
 }
